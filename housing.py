@@ -3,8 +3,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pydeck as pdk 
 # import model from pickle file
 from xgboost import XGBRegressor
