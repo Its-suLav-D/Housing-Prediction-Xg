@@ -54,11 +54,10 @@ st.sidebar.caption("Square footage of the apartment's interior living space")
 unique_zipcode = data['zipcode'].unique()
 
 min_latitude, max_latitude =  data['lat'].min(), data['lat'].max()
-st.write(min_latitude, max_latitude)
+
 
 
 min_longitude, max_longitude =  data['lon'].min(), data['lon'].max()
-st.write(min_longitude, max_longitude)
 
 selected_zipcode = st.sidebar.selectbox('Zipcode', unique_zipcode)
 
