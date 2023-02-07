@@ -15,7 +15,6 @@ model = pickle.load(open('xg_model.pkl', 'rb'))
 
 
 # # Load the data
-@st.cache
 def load_data():
     data = pd.read_csv("https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/housing.csv")
     return data
@@ -219,6 +218,8 @@ if price_button:
 
     # Pass the DataFrame to the Model 
     prediction = model.predict(selected_data)
+    if prediction[0]:
+        st.balloons()
 
     # Display the price prediction
     st.subheader("Price Prediction")
