@@ -54,9 +54,11 @@ st.sidebar.caption("Square footage of the apartment's interior living space")
 unique_zipcode = data['zipcode'].unique()
 
 min_latitude, max_latitude =  data['lat'].min(), data['lat'].max()
+st.write(min_latitude, max_latitude)
+
 
 min_longitude, max_longitude =  data['lon'].min(), data['lon'].max()
-
+st.write(min_longitude, max_longitude)
 
 selected_zipcode = st.sidebar.selectbox('Zipcode', unique_zipcode)
 
@@ -78,11 +80,11 @@ col3, col4 = st.sidebar.columns(2)
 
 # Create a slider widget for the user to enter the Latitude of the location
 with col3:
-    lat = st.slider("Latitude", min_value=min_latitude, max_value=max_latitude, value=min_latitude, step=0.01)
+    lat = st.slider("Latitude", min_value=47.0, max_value=48.0, value=47.0, step=0.01)
 
 # Create a slider widget for the user to enter the Longitude of the location
 with col4:
-    lon = st.slider("Longitude", min_value=min_longitude, max_value=max_longitude, value=min_longitude, step=0.01)
+    lon = st.slider("Longitude", min_value=-122.0, max_value=-121.0, value=-122.0, step=0.01)
 
 
 col5, col6 = st.sidebar.columns(2)
