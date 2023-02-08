@@ -112,7 +112,7 @@ sqft_lving15_neighborhood = st.sidebar.text_input("Enter the square footage of i
 
 st.sidebar.caption("Fill in all the fields to get a price estimate.")
 
-price_button = st.sidebar.button("Predict Price", disabled=False)
+price_button = st.sidebar.button("Predict Price")
  
 
 
@@ -168,12 +168,15 @@ if sqft_living_room and selected_zipcode and min_bedrooms and min_bathrooms and 
     st.sidebar.write("Condition of the Apartment: ", min_condition)
     st.sidebar.write("Square footage of interior housing living space for the nearest 15 neighbors: ", sqft_lving15_neighborhood)
 
+def check_fields():
+    if sqft_living_room and selected_zipcode and min_bedrooms and min_bathrooms and min_floors and min_grade and sqft_lot and sqft_above and min_condition and sqft_lving15_neighborhood:
+        return True 
+    else:
+        return False 
 
 # Display the price prediction if the user has clicked the button
-if price_button:
+if price_button and check_fields():
     #     # Create Data Frame for the selected values
-
-
     # # Display the selected data
     # st.subheader("Selected Data")
     # st.write(selected_data)
@@ -226,6 +229,7 @@ if price_button:
 
     # Format the price to be in USD
     st.subheader("${:,.2f}".format(prediction[0]))
-  
+else:
+    st.subheader("Please select all the values to get the prediction")
 
 
