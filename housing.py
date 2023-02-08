@@ -229,7 +229,9 @@ if price_button and check_fields():
 
     # Format the price to be in USD
     st.subheader("${:,.2f}".format(prediction[0]))
-else:
+
+
+if price_button and not check_fields():
     st.subheader("Please select all the values to get the prediction")
 
 
